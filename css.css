@@ -1,0 +1,105 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #b30000;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #d40000 0%, #800000 100%);
+}
+
+/* Hoa mai trang trí */
+.flower {
+    position: absolute;
+    color: #ffd700;
+    font-size: 24px;
+    opacity: 0.8;
+}
+
+.f1 { top: 10%; left: 20% }
+.f2 { top: 5%; right: 15% }
+.f3 {bottom: 20%; left: 10% }
+
+.window {
+    width: 90%;
+    max-width: 400px;
+    background-color: #fffdec;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    min-height: 450px;
+}
+
+.title-bar {
+    background-color: #fceea7;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e0d080;
+}
+
+.dots { display: flex; gap: 6px; }
+.dot { width: 12px; height: 12px; border-radius: 50px; }
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.title-text {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #8b5e3c;
+}
+
+.content {
+    padding: 20px;
+    color: #333;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.log-item {
+    background: #f5f5f5;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-left: 4px solid #d4a017;
+    border-radius: 4px;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.timestamp { color: #888; font-size: 12px; }
+.tag { font-weight: bold; }
+.highlight-green { color: #1a7f37; font-weight: bold; }
+.highlight-gold { color: #b8860b; font-weight: bold; }
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+button {
+    margin-top: 30px;
+    padding: 15px 40px;
+    background-color: #2e2424;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+button:disabled { background-color: #666; cursor: not-allowed; }
