@@ -1,10 +1,10 @@
 body, html {
     margin: 0;
-    padding: 0;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Segoe UI', sans-serif;
     background-color: #b30000;
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 100vh;
     overflow: hidden;
 }
@@ -20,26 +20,44 @@ body, html {
     background: radial-gradient(circle, #d40000 0%, #800000 100%);
 }
 
-/* Hoa mai trang trí */
 .flower {
     position: absolute;
     color: #ffd700;
-    font-size: 24px;
-    opacity: 0.8;
+    font-size: 20px;
+    top: -50px;
+    user-select: none;
+    pointer-events: none;
+    z-index: 0;
+    animation: fall linear infinite;
+    will-change: transform;
 }
 
-.f1 { top: 10%; left: 20% }
-.f2 { top: 5%; right: 15% }
-.f3 {bottom: 20%; left: 10% }
+@keyframes fall {
+    to { transform: translateY(110vh) rotate(360deg); opacity: 0.3; }
+}
+
+.highlight-green { color: #1a7f37; font-weight: bold; }
+.highlight-gold { color: #b8860b; font-weight: bold; }
+.highlight-blue { color: #2416c0; font-weight: bold; }
+.highlight-red { color: #cc1111; font-weight: bold; }
+.highlight-bold { color:rgb(19, 1, 1); font-weight: bold; }
 
 .window {
     width: 90%;
     max-width: 400px;
     background-color: #fffdec;
     border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
     overflow: hidden;
-    min-height: 450px;
+    min-height: 400px;
+    z-index: 1;
+    transition: 0.5s ease;
+}
+
+.window.fade-out {
+    opacity: 0.15;
+    transform: scale(0.9);
+    filter: blur(3px);
 }
 
 .title-bar {
@@ -51,7 +69,7 @@ body, html {
 }
 
 .dots { display: flex; gap: 6px; }
-.dot { width: 12px; height: 12px; border-radius: 50px; }
+.dot { width: 12px; height: 12px; border-radius: 50%; }
 .red { background: #ff5f56; }
 .yellow { background: #ffbd2e; }
 .green { background: #27c93f; }
@@ -59,35 +77,61 @@ body, html {
 .title-text {
     flex-grow: 1;
     text-align: center;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: bold;
     color: #8b5e3c;
 }
 
-.content {
-    padding: 20px;
-    color: #333;
-    font-size: 15px;
-    line-height: 1.5;
-}
+.content { padding: 20px; color: #333; font-family: 'Courier New', monospace; }
 
 .log-item {
-    background: #f5f5f5;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-left: 4px solid #d4a017;
-    border-radius: 4px;
+    background: rgba(245, 245, 245, 0.8);
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border-left: 5px solid #d4a017; 
+    border-radius: 2px 8px 8px 2px;
     animation: fadeInUp 0.5s ease forwards;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-.timestamp { color: #888; font-size: 12px; }
-.tag { font-weight: bold; }
-.highlight-green { color: #1a7f37; font-weight: bold; }
-.highlight-gold { color: #b8860b; font-weight: bold; }
+.log-item:last-child::after {
+    content: '_';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
 
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+#wish-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffd700;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    width: 90%;
+    display: none;
+    z-index: 10;
+    animation: zoomIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+               glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: translate(-50%, -50%) scale(0.3); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes glow {
+    from { text-shadow: 2px 2px 15px rgba(255, 215, 0, 0.6); }
+    to { text-shadow: 2px 2px 25px rgba(255, 215, 0, 0.9); }
 }
 
 button {
@@ -99,7 +143,20 @@ button {
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
-    letter-spacing: 1px;
+    z-index: 1;
+    transition: 0.3s;
 }
 
-button:disabled { background-color: #666; cursor: not-allowed; }
+button:hover {
+    background-color: #4a3b3b;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+button:active { transform: translateY(1px); }
+
+button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
