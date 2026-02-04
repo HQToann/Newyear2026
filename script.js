@@ -42,6 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
             content: 'Kích hoạt lá chắn bảo vệ sức khỏe. <span class="highlight-red">MIỄN DỊCH</span> với mọi tác động tiêu cực từ môi trường bên ngoài.', 
             pid: '2026.02' 
         }
+
+        {
+            tag: '[HUYNHQUOCTOAN]',
+            content: 'Mình chúc bạn năm mới an lành. <span class="highlight-bold">Manifresh:</span> Thật thành công bạn nhé!!!',
+            pid: 'by HuynhToan'
+        }
     ];
 
     let isFinished = false;
