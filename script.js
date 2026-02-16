@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const wishText = document.createElement('div');
     wishText.id = 'wish-text';
-    wishText.innerHTML = 'CHÚC MỪNG NĂM MỚI 2026';
+    wishText.innerHTML = 'MỪNG XUÂN BÍNH NGỌ 2026';
     bg.appendChild(wishText);
 
     for (let i = 0; i < 20; i++) {
@@ -24,17 +24,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const logs = [
         { tag: '[SUCCESS]', 
-            content: '<span class="highlight-bold">47/365 ngày</span> chạy thử nghiệm (Beta) thành công. Hệ thống chính thức bước vào giai đoạn <span class="highlight-green">TĂNG TRƯỞNG THẦN TỐC</span>.', 
+            content: '<span class="highlight-bold">47/365 ngày</span> chạy thử nghiệm (Beta năm mới) thành công. Hệ thống chính thức bước vào giai đoạn <span class="highlight-green">TĂNG TRƯỞNG THẦN TỐC</span>.', 
             pid: '2026.02' 
         },
 
         { tag: '[OPTIMIZE]', 
-            content: 'Tự động loại bỏ <span class="highlight-bold">"BUG"</span> lo âu. Cập nhật module <span class="highlight-gold">MAY MẮN 2.0</span> cho toàn bộ tiến trình công việc.', 
+            content: 'Tự động loại bỏ <span class="highlight-bold">"BUG"</span> lo âu. Cập nhật module <span class="highlight-gold">MAY MẮN 2.0.2.6</span> cho toàn bộ tiến trình công việc.', 
             pid: '2026.02' 
         },
 
         { tag: '[RESOURCE]', 
-            content: 'Bộ nhớ hạnh phúc: <span class="highlight-blue">UNLIMITED</span>. Băng thông cơ hội: Luôn ở trạng thái <span class="highlight-green">SẴN SÀNG KẾT NỐI</span>.', 
+            content: 'Bộ nhớ hạnh phúc - <span class="highlight-blue">UNLIMITED</span>. Băng thông cơ hội - Luôn ở trạng thái <span class="highlight-green">SẴN SÀNG KẾT NỐI</span>.', 
             pid: '2026.02' 
         },
 
@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
 
         { tag: '[HUYNHQUOCTOAN]',
-            content: '<span class="highlight-bold">Chúc một năm 2026</span>.<span class="highlight-red"> An khang thịnh vượn</span>,<span class="highlight-green"> Phát tài phát lộc</span>, <span class="highlight-gold"> Vạn sự như ý.</span>',
-            pid: 'by HuynhToan'
+            content: '<span class="highlight-bold">Chúc một năm 2026</span>.<span class="highlight-red"> AN KHANG THỊNH VƯỢNG</span>,<span class="highlight-green"> PHÁT TÀI PHÁT LỘC</span>, <span class="highlight-gold"> VẠN SỰ NHƯ Ý.</span>, <span class="highlight-blue"> MÃ ĐÁO THÀNH CÔNG</span>.',
+            pid: 'by trainghiemthuhtq'
         }
     ];
 
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     runBtn.innerText = "HOÀN TẤT";
                     runBtn.style.backgroundColor = "#d40000";
                 }
-            }, index * 800);
+            }, index * 1100);
         });
     });
 });
